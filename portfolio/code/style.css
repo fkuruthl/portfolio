@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #D2CBC1;
+    color: #fffefb;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e3427;
+}
+
+header a {
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #4b5f46;
+    color: #fffefb;
+}
+
+.hero h1 {
+    font-size: 6rem;
+    font-family: 'DM Serif Display', serif;
+    position: relative;
+    z-index: 2;
+    transition: transform 1s ease-in-out; /* Smooth transition for movement */
+}
+
+.hero .overlay-text {
+    font-size: 10rem;
+    font-family: 'DM Serif Display', serif;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.05);
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* About Section */
+.about-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 100px 20px;
+    background-color: #DA983C;
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: transform 1s ease-in-out; /* Smooth transition */
+}
+
+.about-section.active {
+    transform: translateX(0); /* Move to visible screen area */
+}
+
+.about-section .profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-right: 40px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-section .bio {
+    max-width: 600px;
+}
+
+.about-section .bio h2 {
+    font-size: 2.8rem;
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 10px;
+}
+
+.about-section .bio p {
+    margin-bottom: 15px;
+}
+
+.about-section .bio span {
+    display: block;
+    background-color: #d8a649;
+    color: #1e3427;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: max-content;
+}
+
+/* Additional Sections */
+.about-me, .content-grid, .contact, .footer {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: #3b4c36;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-me h3, .content-grid h3, .contact h3 {
+    font-size: 2.5rem;
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 20px;
+}
+
+.about-me-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.about-me-box {
+    background-color: #d8a649;
+    color: #212e27;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-me-box h4 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.about-me-box p {
+    font-size: 1rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.education, .experience, .skills {
+    background-color: #3b4c36;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.education p, .experience p {
+    background-color: #d8a649;
+    color: #212e27;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.skills .skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skills .skill-grid div {
+    background-color: #d8a649;
+    color: #212e27;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.skill-bar-container {
+    margin-top: 20px;
+}
+
+.skill-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    position: relative;
+    margin: 15px 0;
+    height: 25px;
+    width: 100%;
+}
+
+.skill-bar div {
+    background-color: #d8a649;
+    height: 100%;
+    width: 0; /* Set dynamically */
+    border-radius: 5px;
+    transition: width 2s;
+}
+
+.contact .github-button {
+    background-color: #d8a649;
+    color: #1e3427;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.contact .github-button i {
+    margin-right: 8px;
+}
+
+.footer p {
+    color: #bbb;
+}
+
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
